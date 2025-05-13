@@ -94,11 +94,4 @@ test('peer connection functionality', async (t) => {
   if (global.document) global.document = undefined
   if (global.window) global.window = undefined
   
-  if (global.navigator) {
-    Object.defineProperty(global, 'navigator', {
-      value: undefined,
-      writable: true,
-      configurable: true
-    })
-  }
 })
