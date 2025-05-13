@@ -58,9 +58,10 @@ test('peer connection functionality', async (t) => {
     }
   }
   
-  global.navigator = {
-    userAgent: 'Test User Agent'
-  }
+  Object.defineProperty(global, 'navigator', {
+    value: { userAgent: 'Test User Agent' },
+    writable: true
+  })
   
   const appCode = fs.readFileSync(path.join(process.cwd(), 'app.js'), 'utf8')
   
