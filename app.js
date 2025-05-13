@@ -9,26 +9,41 @@ async function loadModules() {
 }
 
 const PEAR_POSITIONS = [
-  { x: 30, y: 30 },
-  { x: 40, y: 50 },
-  { x: 60, y: 40 },
-  { x: 70, y: 60 },
-  { x: 50, y: 30 },
-  { x: 35, y: 70 },
-  { x: 65, y: 25 },
-  { x: 75, y: 45 },
-  { x: 25, y: 50 },
-  { x: 45, y: 65 },
-  { x: 55, y: 55 },
-  { x: 20, y: 35 },
-  { x: 80, y: 30 },
-  { x: 40, y: 25 },
-  { x: 60, y: 70 },
-  { x: 70, y: 20 },
-  { x: 30, y: 60 },
-  { x: 50, y: 75 },
-  { x: 25, y: 25 },
-  { x: 75, y: 75 }
+  { x: 33, y: 40 },  // Branch 1 - top
+  { x: 30, y: 45 },  // Branch 1 - middle
+  { x: 27, y: 50 },  // Branch 1 - bottom
+  
+  { x: 31, y: 50 },  // Branch 2 - top
+  { x: 28, y: 55 },  // Branch 2 - middle
+  { x: 25, y: 60 },  // Branch 2 - bottom
+  
+  { x: 28, y: 60 },  // Branch 3 - top
+  { x: 25, y: 65 },  // Branch 3 - middle
+  { x: 22, y: 70 },  // Branch 3 - bottom
+  
+  { x: 30, y: 70 },  // Branch 4 - top
+  { x: 27, y: 75 },  // Branch 4 - bottom
+  
+  { x: 67, y: 40 },  // Branch 5 - top
+  { x: 70, y: 45 },  // Branch 5 - middle
+  { x: 73, y: 50 },  // Branch 5 - bottom
+  
+  { x: 69, y: 50 },  // Branch 6 - top
+  { x: 72, y: 55 },  // Branch 6 - middle
+  { x: 75, y: 60 },  // Branch 6 - bottom
+  
+  { x: 72, y: 60 },  // Branch 7 - top
+  { x: 75, y: 65 },  // Branch 7 - middle
+  { x: 78, y: 70 },  // Branch 7 - bottom
+  
+  { x: 70, y: 70 },  // Branch 8 - top
+  { x: 73, y: 75 },  // Branch 8 - bottom
+  
+  { x: 39, y: 42 },  // Small branch 1
+  { x: 36, y: 47 },  // Small branch 2
+  
+  { x: 61, y: 42 },  // Small branch 3
+  { x: 64, y: 47 }   // Small branch 4
 ]
 
 const peers = new Map()
