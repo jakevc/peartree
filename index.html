@@ -105,6 +105,16 @@
       filter: invert(0.8) brightness(1.2); /* Makes black branches appear light grey in dark mode */
     }
     
+    #pears-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Allow clicks to pass through to elements below */
+      z-index: 1; /* Position above tree but below tooltip */
+    }
+    
     .pear {
       position: absolute;
       width: 6.67%; /* 40px/600px = 0.0667 or 6.67% of container width */
@@ -117,12 +127,11 @@
       cursor: pointer;
       transition: transform 0.2s ease, background-image 0.3s ease;
       transform-origin: center bottom; /* Scale from bottom center */
-      filter: none; /* Ensure no filter is applied to pears by default */
+      pointer-events: auto; /* Re-enable pointer events for pears */
     }
     
     [data-theme="dark"] .pear {
       background-image: url('assets/pear-logo-dark.svg');
-      filter: none; /* Override parent filter in dark mode to prevent color distortion */
     }
     
     .pear:hover {
@@ -238,6 +247,7 @@
   <div class="container">
     <div class="tree-container">
       <div class="tree" id="tree"></div>
+      <div id="pears-container"></div>
       <div class="tooltip" id="tooltip"></div>
     </div>
   </div>

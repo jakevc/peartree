@@ -40,6 +40,7 @@ let hyperswarm = null
 const connections = []
 
 const treeElement = document.getElementById('tree')
+const pearsContainerElement = document.getElementById('pears-container')
 const tooltipElement = document.getElementById('tooltip')
 const peerCountElement = document.getElementById('peerCountValue')
 const footerPeerCountElement = document.getElementById('footerPeerCount')
@@ -148,8 +149,8 @@ async function initSwarm() {
 }
 
 function updatePeers() {
-  while (treeElement.firstChild) {
-    treeElement.removeChild(treeElement.firstChild)
+  while (pearsContainerElement.firstChild) {
+    pearsContainerElement.removeChild(pearsContainerElement.firstChild)
   }
   
   peerCountElement.textContent = peers.size
@@ -173,7 +174,7 @@ function updatePeers() {
     pearElement.addEventListener('mouseenter', showTooltip)
     pearElement.addEventListener('mouseleave', hideTooltip)
     
-    treeElement.appendChild(pearElement)
+    pearsContainerElement.appendChild(pearElement)
     
     index++
   }
