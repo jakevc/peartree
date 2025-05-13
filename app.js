@@ -212,16 +212,16 @@ function initThemeToggle() {
   
   if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
     htmlElement.setAttribute('data-theme', 'dark')
-    themeToggle.checked = true
   }
   
-  themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
-      htmlElement.setAttribute('data-theme', 'dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme')
+    if (currentTheme === 'dark') {
       htmlElement.removeAttribute('data-theme')
       localStorage.setItem('theme', 'light')
+    } else {
+      htmlElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
     }
   })
 }
