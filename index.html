@@ -117,10 +117,12 @@
       cursor: pointer;
       transition: transform 0.2s ease, background-image 0.3s ease;
       transform-origin: center bottom; /* Scale from bottom center */
+      filter: none; /* Ensure no filter is applied to pears by default */
     }
     
     [data-theme="dark"] .pear {
       background-image: url('assets/pear-logo-dark.svg');
+      filter: none; /* Override parent filter in dark mode to prevent color distortion */
     }
     
     .pear:hover {
