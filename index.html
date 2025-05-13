@@ -80,30 +80,43 @@
     
     .tree-container {
       position: relative;
-      width: 600px;
-      height: 400px;
+      width: 100%;
+      max-width: 800px;
+      height: 0;
+      padding-bottom: 66.67%; /* Maintain aspect ratio (400/600 = 0.6667) */
       margin: 0 auto 20px auto;
     }
     
     .tree {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       background-image: url('assets/tree.svg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      filter: none;
+      transition: filter 0.3s ease;
+    }
+    
+    [data-theme="dark"] .tree {
+      filter: invert(0.8) brightness(1.2); /* Makes black branches appear light grey in dark mode */
     }
     
     .pear {
       position: absolute;
-      width: 40px;
-      height: 50px;
+      width: 6.67%; /* 40px/600px = 0.0667 or 6.67% of container width */
+      height: 0;
+      padding-bottom: 8.33%; /* 50px/600px = 0.0833 or 8.33% of container width */
       background-image: url('assets/pear-logo.svg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
       transition: transform 0.2s ease, background-image 0.3s ease;
+      transform-origin: center bottom; /* Scale from bottom center */
     }
     
     [data-theme="dark"] .pear {

@@ -1,138 +1,250 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <!-- Shel Silverstein style tree with empty branches -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
+  <!-- More natural Shel Silverstein style tree with irregular branches -->
   
-  <!-- Tree trunk - more irregular and hand-drawn looking -->
-  <path d="M300,380 C305,340 295,300 300,260 C305,220 290,180 295,140 C300,100 305,60 300,30" 
+  <!-- Tree trunk - more natural and trunk-shaped -->
+  <path d="M290,380 C285,350 295,320 290,290 C285,260 295,230 290,200 
+           C285,170 295,140 290,110 C288,80 292,50 290,30" 
+        stroke="#000000" stroke-width="12" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  
+  <!-- Trunk base widening -->
+  <path d="M290,380 C310,370 330,380 350,390" 
         stroke="#000000" stroke-width="10" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <!-- Main branches - more irregular with empty ends for pears -->
+  <path d="M290,380 C270,370 250,380 230,390" 
+        stroke="#000000" stroke-width="10" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  
+  <!-- Main branches - more natural and irregular -->
   <!-- Left side branches -->
-  <path d="M300,80 C280,85 260,75 240,80 C220,85 200,75 180,70 C160,65 140,70 120,65" 
+  <path d="M290,80 C270,75 250,85 230,75 C210,65 190,75 170,65 C150,55 130,65 110,55" 
         stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,120 C280,125 260,115 240,120 C220,125 200,115 180,110" 
+  <path d="M290,120 C265,115 240,125 215,115 C190,105 165,115 140,105" 
         stroke="#000000" stroke-width="7" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,160 C280,165 260,155 240,160 C220,165 200,155 180,160" 
+  <path d="M290,160 C265,155 240,165 215,155 C190,145 165,155 140,145" 
         stroke="#000000" stroke-width="8" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M295,200 C275,205 255,195 235,200 C215,205 195,195 175,200" 
+  <path d="M290,200 C265,195 240,205 215,195 C190,185 165,195 140,185" 
         stroke="#000000" stroke-width="7" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M295,240 C275,245 255,235 235,240 C215,245 195,235 175,240" 
+  <path d="M290,240 C265,235 240,245 215,235 C190,225 165,235 140,225" 
         stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
   <!-- Right side branches -->
-  <path d="M300,80 C320,85 340,75 360,80 C380,85 400,75 420,70 C440,65 460,70 480,65" 
+  <path d="M290,80 C310,75 330,85 350,75 C370,65 390,75 410,65 C430,55 450,65 470,55" 
         stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,120 C320,125 340,115 360,120 C380,125 400,115 420,110" 
+  <path d="M290,120 C315,115 340,125 365,115 C390,105 415,115 440,105" 
         stroke="#000000" stroke-width="7" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,160 C320,165 340,155 360,160 C380,165 400,155 420,160" 
+  <path d="M290,160 C315,155 340,165 365,155 C390,145 415,155 440,145" 
         stroke="#000000" stroke-width="8" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M295,200 C315,205 335,195 355,200 C375,205 395,195 415,200" 
+  <path d="M290,200 C315,195 340,205 365,195 C390,185 415,195 440,185" 
         stroke="#000000" stroke-width="7" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M295,240 C315,245 335,235 355,240 C375,245 395,235 415,240" 
+  <path d="M290,240 C315,235 340,245 365,235 C390,225 415,235 440,225" 
         stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <!-- Empty branch ends for pear attachment - left side -->
-  <circle cx="120" cy="65" r="3" fill="#000000"/>
-  <circle cx="180" cy="110" r="3" fill="#000000"/>
-  <circle cx="180" cy="160" r="3" fill="#000000"/>
-  <circle cx="175" cy="200" r="3" fill="#000000"/>
-  <circle cx="175" cy="240" r="3" fill="#000000"/>
-  
-  <!-- Empty branch ends for pear attachment - right side -->
-  <circle cx="480" cy="65" r="3" fill="#000000"/>
-  <circle cx="420" cy="110" r="3" fill="#000000"/>
-  <circle cx="420" cy="160" r="3" fill="#000000"/>
-  <circle cx="415" cy="200" r="3" fill="#000000"/>
-  <circle cx="415" cy="240" r="3" fill="#000000"/>
-  
-  <!-- Additional smaller branches with empty ends - left side -->
-  <path d="M240,80 C230,90 220,100 210,90" 
+  <!-- Additional irregular branches - left side -->
+  <path d="M230,75 C220,65 210,55 200,65 C190,75 180,65 170,75" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="210" cy="90" r="2" fill="#000000"/>
   
-  <path d="M240,120 C230,130 220,140 210,130" 
+  <path d="M215,115 C205,105 195,95 185,105 C175,115 165,105 155,115" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="210" cy="130" r="2" fill="#000000"/>
   
-  <path d="M240,160 C230,170 220,180 210,170" 
+  <path d="M215,155 C205,145 195,135 185,145 C175,155 165,145 155,155" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="210" cy="170" r="2" fill="#000000"/>
   
-  <path d="M235,200 C225,210 215,220 205,210" 
+  <path d="M215,195 C205,185 195,175 185,185 C175,195 165,185 155,195" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="205" cy="210" r="2" fill="#000000"/>
   
-  <path d="M235,240 C225,250 215,260 205,250" 
+  <path d="M215,235 C205,225 195,215 185,225 C175,235 165,225 155,235" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="205" cy="250" r="2" fill="#000000"/>
   
-  <!-- Additional smaller branches with empty ends - right side -->
-  <path d="M360,80 C370,90 380,100 390,90" 
+  <!-- Additional irregular branches - right side -->
+  <path d="M350,75 C360,65 370,55 380,65 C390,75 400,65 410,75" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="390" cy="90" r="2" fill="#000000"/>
   
-  <path d="M360,120 C370,130 380,140 390,130" 
+  <path d="M365,115 C375,105 385,95 395,105 C405,115 415,105 425,115" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="390" cy="130" r="2" fill="#000000"/>
   
-  <path d="M360,160 C370,170 380,180 390,170" 
+  <path d="M365,155 C375,145 385,135 395,145 C405,155 415,145 425,155" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="390" cy="170" r="2" fill="#000000"/>
   
-  <path d="M355,200 C365,210 375,220 385,210" 
+  <path d="M365,195 C375,185 385,175 395,185 C405,195 415,185 425,195" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="385" cy="210" r="2" fill="#000000"/>
   
-  <path d="M355,240 C365,250 375,260 385,250" 
+  <path d="M365,235 C375,225 385,215 395,225 C405,235 415,225 425,235" 
         stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
-  <circle cx="385" cy="250" r="2" fill="#000000"/>
+  
+  <!-- Small twigs with empty ends - left side -->
+  <path d="M170,65 C160,60 150,55 140,60" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="140" cy="60" r="2" fill="#000000"/>
+  
+  <path d="M170,75 C160,80 150,85 140,80" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="140" cy="80" r="2" fill="#000000"/>
+  
+  <path d="M155,115 C145,110 135,105 125,110" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="125" cy="110" r="2" fill="#000000"/>
+  
+  <path d="M155,155 C145,150 135,145 125,150" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="125" cy="150" r="2" fill="#000000"/>
+  
+  <path d="M155,195 C145,190 135,185 125,190" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="125" cy="190" r="2" fill="#000000"/>
+  
+  <path d="M155,235 C145,230 135,225 125,230" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="125" cy="230" r="2" fill="#000000"/>
+  
+  <!-- Small twigs with empty ends - right side -->
+  <path d="M410,65 C420,60 430,55 440,60" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="440" cy="60" r="2" fill="#000000"/>
+  
+  <path d="M410,75 C420,80 430,85 440,80" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="440" cy="80" r="2" fill="#000000"/>
+  
+  <path d="M425,115 C435,110 445,105 455,110" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="455" cy="110" r="2" fill="#000000"/>
+  
+  <path d="M425,155 C435,150 445,145 455,150" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="455" cy="150" r="2" fill="#000000"/>
+  
+  <path d="M425,195 C435,190 445,185 455,190" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="455" cy="190" r="2" fill="#000000"/>
+  
+  <path d="M425,235 C435,230 445,225 455,230" 
+        stroke="#000000" stroke-width="3" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="455" cy="230" r="2" fill="#000000"/>
+  
+  <!-- Additional small twigs - left side -->
+  <path d="M185,105 C175,100 165,95 155,100" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="155" cy="100" r="1.5" fill="#000000"/>
+  
+  <path d="M185,145 C175,140 165,135 155,140" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="155" cy="140" r="1.5" fill="#000000"/>
+  
+  <path d="M185,185 C175,180 165,175 155,180" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="155" cy="180" r="1.5" fill="#000000"/>
+  
+  <path d="M185,225 C175,220 165,215 155,220" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="155" cy="220" r="1.5" fill="#000000"/>
+  
+  <!-- Additional small twigs - right side -->
+  <path d="M395,105 C405,100 415,95 425,100" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="425" cy="100" r="1.5" fill="#000000"/>
+  
+  <path d="M395,145 C405,140 415,135 425,140" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="425" cy="140" r="1.5" fill="#000000"/>
+  
+  <path d="M395,185 C405,180 415,175 425,180" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="425" cy="180" r="1.5" fill="#000000"/>
+  
+  <path d="M395,225 C405,220 415,215 425,220" 
+        stroke="#000000" stroke-width="2" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="425" cy="220" r="1.5" fill="#000000"/>
 </svg>
