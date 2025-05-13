@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Tree trunk -->
+  <path d="M300,350 Q280,250 260,200 Q240,150 250,100 Q260,50 300,30 Q340,50 350,100 Q360,150 340,200 Q320,250 300,350" fill="#8B4513"/>
+  
+  <!-- Tree branches -->
+  <path d="M260,200 Q220,190 180,210" stroke="#8B4513" stroke-width="10" fill="none"/>
+  <path d="M260,150 Q220,140 190,120" stroke="#8B4513" stroke-width="8" fill="none"/>
+  <path d="M340,200 Q380,190 420,210" stroke="#8B4513" stroke-width="10" fill="none"/>
+  <path d="M340,150 Q380,140 410,120" stroke="#8B4513" stroke-width="8" fill="none"/>
+  
+  <!-- Tree foliage -->
+  <ellipse cx="300" cy="120" rx="120" ry="100" fill="#2E7D32"/>
+  <ellipse cx="220" cy="180" rx="70" ry="60" fill="#388E3C"/>
+  <ellipse cx="380" cy="180" rx="70" ry="60" fill="#388E3C"/>
+  <ellipse cx="180" cy="140" rx="50" ry="40" fill="#43A047"/>
+  <ellipse cx="420" cy="140" rx="50" ry="40" fill="#43A047"/>
+</svg>

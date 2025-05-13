@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Peartree</title>
+  <style>
+    body {
+      --title-bar-height: 42px;
+      padding-top: var(--title-bar-height);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding-top: var(--title-bar-height);
+      overflow: hidden;
+    }
+
+    #bar {
+      background: rgba(55, 60, 72, 0.6);
+      backdrop-filter: blur(64px);
+      -webkit-app-region: drag;
+      height: var(--title-bar-height);
+      padding: 0;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: #FFF;
+      white-space: nowrap;
+      box-sizing: border-box;
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #bar-title {
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    #peer-count {
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    pear-ctrl[data-platform=darwin] {
+      margin-top: 18px;
+      margin-left: 12px;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - var(--title-bar-height));
+      padding: 20px;
+    }
+    
+    .tree-container {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: 0 auto 20px auto;
+    }
+    
+    .tree {
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/tree.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .pear {
+      position: absolute;
+      width: 30px;
+      height: 40px;
+      background-color: #8BC34A;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      transform: rotate(15deg);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    
+    .pear:before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 13px;
+      width: 4px;
+      height: 10px;
+      background-color: #795548;
+      border-radius: 2px;
+    }
+    
+    .pear:hover {
+      transform: rotate(15deg) scale(1.1);
+    }
+    
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      z-index: 100;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      white-space: pre;
+    }
+    
+    .peer-info {
+      margin: 0 auto;
+      background-color: #E8F5E9;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 600px;
+    }
+    
+    .peer-info h3 {
+      margin-top: 0;
+      color: #2E7D32;
+    }
+    
+    .instructions {
+      margin: 20px auto 0 auto;
+      background-color: #E8F5E9;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 600px;
+    }
+    
+    .instructions h3 {
+      margin-top: 0;
+      color: #2E7D32;
+    }
+    
+    .instructions code {
+      background-color: #C8E6C9;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  </style>
+  <script type='module' src='./app.js'></script>
+</head>
+<body>
+  <div id="bar">
+    <pear-ctrl></pear-ctrl>
+    <div id="bar-title">Peartree</div>
+    <div id="peer-count">Connected Peers: <span id="peerCountValue">0</span></div>
+  </div>
+  
+  <div class="container">
+    <div class="tree-container">
+      <div class="tree" id="tree"></div>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+    
+    <div class="peer-info">
+      <h3>Your Peer Information</h3>
+      <p>Key: <span id="peerKey"></span></p>
+    </div>
+    
+    <div class="instructions">
+      <h3>How to Run Multiple Peers</h3>
+      <p>To run multiple instances of this application and see peers connect:</p>
+      <ol>
+        <li>Open a terminal and navigate to the peartree directory</li>
+        <li>Run <code>npx pear run .</code> to start the first instance</li>
+        <li>Open another terminal and run <code>npx pear run .</code> again to start another instance</li>
+        <li>Each new instance will connect to the network and appear as a pear on the tree</li>
+        <li>Hover over any pear to see information about that peer</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
