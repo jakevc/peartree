@@ -9,41 +9,29 @@ async function loadModules() {
 }
 
 const PEAR_POSITIONS = [
-  { x: 33, y: 40 },  // Branch 1 - top
-  { x: 30, y: 45 },  // Branch 1 - middle
-  { x: 27, y: 50 },  // Branch 1 - bottom
+  { x: 20, y: 16.25 },  // Branch at (120, 65)
+  { x: 30, y: 27.5 },   // Branch at (180, 110)
+  { x: 30, y: 40 },     // Branch at (180, 160)
+  { x: 29.2, y: 50 },   // Branch at (175, 200)
+  { x: 29.2, y: 60 },   // Branch at (175, 240)
   
-  { x: 31, y: 50 },  // Branch 2 - top
-  { x: 28, y: 55 },  // Branch 2 - middle
-  { x: 25, y: 60 },  // Branch 2 - bottom
+  { x: 80, y: 16.25 },  // Branch at (480, 65)
+  { x: 70, y: 27.5 },   // Branch at (420, 110)
+  { x: 70, y: 40 },     // Branch at (420, 160)
+  { x: 69.2, y: 50 },   // Branch at (415, 200)
+  { x: 69.2, y: 60 },   // Branch at (415, 240)
   
-  { x: 28, y: 60 },  // Branch 3 - top
-  { x: 25, y: 65 },  // Branch 3 - middle
-  { x: 22, y: 70 },  // Branch 3 - bottom
+  { x: 35, y: 22.5 },   // Branch at (210, 90)
+  { x: 35, y: 32.5 },   // Branch at (210, 130)
+  { x: 35, y: 42.5 },   // Branch at (210, 170)
+  { x: 34.2, y: 52.5 }, // Branch at (205, 210)
+  { x: 34.2, y: 62.5 }, // Branch at (205, 250)
   
-  { x: 30, y: 70 },  // Branch 4 - top
-  { x: 27, y: 75 },  // Branch 4 - bottom
-  
-  { x: 67, y: 40 },  // Branch 5 - top
-  { x: 70, y: 45 },  // Branch 5 - middle
-  { x: 73, y: 50 },  // Branch 5 - bottom
-  
-  { x: 69, y: 50 },  // Branch 6 - top
-  { x: 72, y: 55 },  // Branch 6 - middle
-  { x: 75, y: 60 },  // Branch 6 - bottom
-  
-  { x: 72, y: 60 },  // Branch 7 - top
-  { x: 75, y: 65 },  // Branch 7 - middle
-  { x: 78, y: 70 },  // Branch 7 - bottom
-  
-  { x: 70, y: 70 },  // Branch 8 - top
-  { x: 73, y: 75 },  // Branch 8 - bottom
-  
-  { x: 39, y: 42 },  // Small branch 1
-  { x: 36, y: 47 },  // Small branch 2
-  
-  { x: 61, y: 42 },  // Small branch 3
-  { x: 64, y: 47 }   // Small branch 4
+  { x: 65, y: 22.5 },   // Branch at (390, 90)
+  { x: 65, y: 32.5 },   // Branch at (390, 130)
+  { x: 65, y: 42.5 },   // Branch at (390, 170)
+  { x: 64.2, y: 52.5 }, // Branch at (385, 210)
+  { x: 64.2, y: 62.5 }  // Branch at (385, 250)
 ]
 
 const peers = new Map()

@@ -1,116 +1,138 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <!-- Pencil-style tree with hanging branches -->
+  <!-- Shel Silverstein style tree with empty branches -->
   
-  <!-- Tree trunk -->
-  <path d="M300,350 Q290,280 295,220 Q300,160 300,100" 
-        stroke="#5D4037" stroke-width="8" fill="none" 
+  <!-- Tree trunk - more irregular and hand-drawn looking -->
+  <path d="M300,380 C305,340 295,300 300,260 C305,220 290,180 295,140 C300,100 305,60 300,30" 
+        stroke="#000000" stroke-width="10" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <!-- Main branches -->
+  <!-- Main branches - more irregular with empty ends for pears -->
   <!-- Left side branches -->
-  <path d="M300,120 Q260,130 220,110" 
-        stroke="#5D4037" stroke-width="5" fill="none" 
+  <path d="M300,80 C280,85 260,75 240,80 C220,85 200,75 180,70 C160,65 140,70 120,65" 
+        stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,150 Q250,160 200,140" 
-        stroke="#5D4037" stroke-width="6" fill="none" 
+  <path d="M300,120 C280,125 260,115 240,120 C220,125 200,115 180,110" 
+        stroke="#000000" stroke-width="7" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,180 Q240,200 180,190" 
-        stroke="#5D4037" stroke-width="7" fill="none" 
+  <path d="M300,160 C280,165 260,155 240,160 C220,165 200,155 180,160" 
+        stroke="#000000" stroke-width="8" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M295,220 Q250,240 190,250" 
-        stroke="#5D4037" stroke-width="6" fill="none" 
+  <path d="M295,200 C275,205 255,195 235,200 C215,205 195,195 175,200" 
+        stroke="#000000" stroke-width="7" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  
+  <path d="M295,240 C275,245 255,235 235,240 C215,245 195,235 175,240" 
+        stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
   <!-- Right side branches -->
-  <path d="M300,120 Q340,130 380,110" 
-        stroke="#5D4037" stroke-width="5" fill="none" 
+  <path d="M300,80 C320,85 340,75 360,80 C380,85 400,75 420,70 C440,65 460,70 480,65" 
+        stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,150 Q350,160 400,140" 
-        stroke="#5D4037" stroke-width="6" fill="none" 
+  <path d="M300,120 C320,125 340,115 360,120 C380,125 400,115 420,110" 
+        stroke="#000000" stroke-width="7" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M300,180 Q360,200 420,190" 
-        stroke="#5D4037" stroke-width="7" fill="none" 
+  <path d="M300,160 C320,165 340,155 360,160 C380,165 400,155 420,160" 
+        stroke="#000000" stroke-width="8" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M295,220 Q350,240 410,250" 
-        stroke="#5D4037" stroke-width="6" fill="none" 
+  <path d="M295,200 C315,205 335,195 355,200 C375,205 395,195 415,200" 
+        stroke="#000000" stroke-width="7" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <!-- Hanging branches with attachment points for pears -->
-  <!-- Left side hanging branches -->
-  <path d="M220,110 Q210,130 200,160" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
+  <path d="M295,240 C315,245 335,235 355,240 C375,245 395,235 415,240" 
+        stroke="#000000" stroke-width="6" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
   
-  <path d="M200,140 Q190,170 185,200" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
-        stroke-linecap="round" stroke-linejoin="round"
-        style="stroke-dasharray: 1, 0"/>
+  <!-- Empty branch ends for pear attachment - left side -->
+  <circle cx="120" cy="65" r="3" fill="#000000"/>
+  <circle cx="180" cy="110" r="3" fill="#000000"/>
+  <circle cx="180" cy="160" r="3" fill="#000000"/>
+  <circle cx="175" cy="200" r="3" fill="#000000"/>
+  <circle cx="175" cy="240" r="3" fill="#000000"/>
   
-  <path d="M180,190 Q170,220 165,250" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
-        stroke-linecap="round" stroke-linejoin="round"
-        style="stroke-dasharray: 1, 0"/>
+  <!-- Empty branch ends for pear attachment - right side -->
+  <circle cx="480" cy="65" r="3" fill="#000000"/>
+  <circle cx="420" cy="110" r="3" fill="#000000"/>
+  <circle cx="420" cy="160" r="3" fill="#000000"/>
+  <circle cx="415" cy="200" r="3" fill="#000000"/>
+  <circle cx="415" cy="240" r="3" fill="#000000"/>
   
-  <path d="M190,250 Q180,280 175,310" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
+  <!-- Additional smaller branches with empty ends - left side -->
+  <path d="M240,80 C230,90 220,100 210,90" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="210" cy="90" r="2" fill="#000000"/>
   
-  <!-- Right side hanging branches -->
-  <path d="M380,110 Q390,130 400,160" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
+  <path d="M240,120 C230,130 220,140 210,130" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="210" cy="130" r="2" fill="#000000"/>
   
-  <path d="M400,140 Q410,170 415,200" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
+  <path d="M240,160 C230,170 220,180 210,170" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="210" cy="170" r="2" fill="#000000"/>
   
-  <path d="M420,190 Q430,220 435,250" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
+  <path d="M235,200 C225,210 215,220 205,210" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="205" cy="210" r="2" fill="#000000"/>
   
-  <path d="M410,250 Q420,280 425,310" 
-        stroke="#5D4037" stroke-width="3" fill="none" 
+  <path d="M235,240 C225,250 215,260 205,250" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="205" cy="250" r="2" fill="#000000"/>
   
-  <!-- Additional small hanging branches -->
-  <path d="M250,125 Q240,145 235,165" 
-        stroke="#5D4037" stroke-width="2" fill="none" 
+  <!-- Additional smaller branches with empty ends - right side -->
+  <path d="M360,80 C370,90 380,100 390,90" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="390" cy="90" r="2" fill="#000000"/>
   
-  <path d="M230,145 Q220,165 215,185" 
-        stroke="#5D4037" stroke-width="2" fill="none" 
+  <path d="M360,120 C370,130 380,140 390,130" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="390" cy="130" r="2" fill="#000000"/>
   
-  <path d="M350,125 Q360,145 365,165" 
-        stroke="#5D4037" stroke-width="2" fill="none" 
+  <path d="M360,160 C370,170 380,180 390,170" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="390" cy="170" r="2" fill="#000000"/>
   
-  <path d="M370,145 Q380,165 385,185" 
-        stroke="#5D4037" stroke-width="2" fill="none" 
+  <path d="M355,200 C365,210 375,220 385,210" 
+        stroke="#000000" stroke-width="4" fill="none" 
         stroke-linecap="round" stroke-linejoin="round"
         style="stroke-dasharray: 1, 0"/>
+  <circle cx="385" cy="210" r="2" fill="#000000"/>
+  
+  <path d="M355,240 C365,250 375,260 385,250" 
+        stroke="#000000" stroke-width="4" fill="none" 
+        stroke-linecap="round" stroke-linejoin="round"
+        style="stroke-dasharray: 1, 0"/>
+  <circle cx="385" cy="250" r="2" fill="#000000"/>
 </svg>
