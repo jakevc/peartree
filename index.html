@@ -82,6 +82,7 @@
       transform: rotate(15deg);
       cursor: pointer;
       transition: transform 0.2s ease;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     }
     
     .pear:before {
@@ -97,6 +98,11 @@
     
     .pear:hover {
       transform: rotate(15deg) scale(1.1);
+    }
+    
+    .pear.self-peer {
+      background-color: #CDDC39;
+      border: 1px dashed #558B2F;
     }
     
     .tooltip {
