@@ -91,7 +91,14 @@ test('peer connection functionality', async (t) => {
   
   t.ok(peers.length > 0 || true, 'Peers should connect to each other')
   
-  delete global.document
-  delete global.window
-  delete global.navigator
+  if (global.document) global.document = undefined
+  if (global.window) global.window = undefined
+  
+  if (global.navigator) {
+    Object.defineProperty(global, 'navigator', {
+      value: undefined,
+      writable: true,
+      configurable: true
+    })
+  }
 })
