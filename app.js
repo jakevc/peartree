@@ -203,10 +203,34 @@ function hideTooltip() {
   tooltipElement.style.opacity = '0'
 }
 
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle')
+  const htmlElement = document.documentElement
+  
+  const savedTheme = localStorage.getItem('theme')
+  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  
+  if (savedTheme === 'dark' || (!savedTheme && prefersDarkMode)) {
+    htmlElement.setAttribute('data-theme', 'dark')
+    themeToggle.checked = true
+  }
+  
+  themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+      htmlElement.setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      htmlElement.removeAttribute('data-theme')
+      localStorage.setItem('theme', 'light')
+    }
+  })
+}
+
 window.addEventListener('DOMContentLoaded', async () => {
   console.log('Peartree application starting...')
   
   await loadModules()
   
   initSwarm()
+  initThemeToggle()
 })

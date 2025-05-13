@@ -3,15 +3,36 @@
 <head>
   <title>Peartree</title>
   <style>
-    body {
+    :root {
       --title-bar-height: 42px;
+      --bg-color: #f5f5f5;
+      --text-color: #333;
+      --card-bg-color: #E8F5E9;
+      --card-title-color: #2E7D32;
+      --code-bg-color: #C8E6C9;
+      --tooltip-bg-color: rgba(0, 0, 0, 0.8);
+      --tooltip-text-color: white;
+    }
+    
+    [data-theme="dark"] {
+      --bg-color: #1e1e1e;
+      --text-color: #e0e0e0;
+      --card-bg-color: #2c3e50;
+      --card-title-color: #4CAF50;
+      --code-bg-color: #34495e;
+      --tooltip-bg-color: rgba(255, 255, 255, 0.8);
+      --tooltip-text-color: black;
+    }
+    
+    body {
       padding-top: var(--title-bar-height);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
       padding-top: var(--title-bar-height);
       overflow: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     #bar {
@@ -82,7 +103,11 @@
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background-image 0.3s ease;
+    }
+    
+    [data-theme="dark"] .pear {
+      background-image: url('assets/pear-logo-dark.svg');
     }
     
     .pear:hover {
@@ -96,49 +121,112 @@
     
     .tooltip {
       position: absolute;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
+      background-color: var(--tooltip-bg-color);
+      color: var(--tooltip-text-color);
       padding: 8px 12px;
       border-radius: 4px;
       font-size: 14px;
       z-index: 100;
       pointer-events: none;
       opacity: 0;
-      transition: opacity 0.2s;
+      transition: opacity 0.2s, background-color 0.3s ease, color 0.3s ease;
       white-space: pre;
     }
     
     .peer-info {
       margin: 0 auto;
-      background-color: #E8F5E9;
+      background-color: var(--card-bg-color);
       padding: 15px;
       border-radius: 5px;
       max-width: 600px;
+      transition: background-color 0.3s ease;
     }
     
     .peer-info h3 {
       margin-top: 0;
-      color: #2E7D32;
+      color: var(--card-title-color);
+      transition: color 0.3s ease;
     }
     
     .instructions {
       margin: 20px auto 0 auto;
-      background-color: #E8F5E9;
+      background-color: var(--card-bg-color);
       padding: 15px;
       border-radius: 5px;
       max-width: 600px;
+      transition: background-color 0.3s ease;
     }
     
     .instructions h3 {
       margin-top: 0;
-      color: #2E7D32;
+      color: var(--card-title-color);
+      transition: color 0.3s ease;
     }
     
     .instructions code {
-      background-color: #C8E6C9;
+      background-color: var(--code-bg-color);
       padding: 2px 5px;
       border-radius: 3px;
       font-family: monospace;
+      transition: background-color 0.3s ease;
+    }
+    
+    .theme-toggle {
+      position: absolute;
+      top: 10px;
+      right: 100px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      color: white;
+    }
+    
+    .theme-toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      margin-left: 8px;
+    }
+    
+    .theme-toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .theme-toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    
+    .theme-toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .theme-toggle-slider {
+      background-color: #4CAF50;
+    }
+    
+    input:checked + .theme-toggle-slider:before {
+      transform: translateX(20px);
     }
   </style>
   <script type='module' src='./app.js'></script>
@@ -147,6 +235,13 @@
   <div id="bar">
     <pear-ctrl></pear-ctrl>
     <div id="bar-title">Peartree</div>
+    <div class="theme-toggle">
+      <span>Theme</span>
+      <label class="theme-toggle-switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="theme-toggle-slider"></span>
+      </label>
+    </div>
     <div id="peer-count">Connected Peers: <span id="peerCountValue">0</span></div>
   </div>
   
