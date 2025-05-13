@@ -75,34 +75,23 @@
     
     .pear {
       position: absolute;
-      width: 30px;
-      height: 40px;
-      background-color: #8BC34A;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      transform: rotate(15deg);
+      width: 40px;
+      height: 50px;
+      background-image: url('assets/pear-logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       cursor: pointer;
       transition: transform 0.2s ease;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    .pear:before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 13px;
-      width: 4px;
-      height: 10px;
-      background-color: #795548;
-      border-radius: 2px;
     }
     
     .pear:hover {
-      transform: rotate(15deg) scale(1.1);
+      transform: scale(1.1);
     }
     
     .pear.self-peer {
-      background-color: #CDDC39;
-      border: 1px dashed #558B2F;
+      opacity: 0.7;
+      filter: brightness(1.2);
     }
     
     .tooltip {
