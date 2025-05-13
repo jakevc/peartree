@@ -42,6 +42,7 @@ const connections = []
 const treeElement = document.getElementById('tree')
 const tooltipElement = document.getElementById('tooltip')
 const peerCountElement = document.getElementById('peerCountValue')
+const footerPeerCountElement = document.getElementById('footerPeerCount')
 const peerKeyElement = document.getElementById('peerKey')
 
 async function initSwarm() {
@@ -152,6 +153,7 @@ function updatePeers() {
   }
   
   peerCountElement.textContent = peers.size
+  footerPeerCountElement.textContent = peers.size
   
   let index = 0
   for (const [peerId, peerInfo] of peers.entries()) {

@@ -146,42 +146,28 @@
       white-space: pre;
     }
     
-    .peer-info {
-      margin: 0 auto;
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       background-color: var(--card-bg-color);
-      padding: 15px;
-      border-radius: 5px;
-      max-width: 600px;
-      transition: background-color 0.3s ease;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     }
     
-    .peer-info h3 {
-      margin-top: 0;
-      color: var(--card-title-color);
-      transition: color 0.3s ease;
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
-    .instructions {
-      margin: 20px auto 0 auto;
-      background-color: var(--card-bg-color);
-      padding: 15px;
-      border-radius: 5px;
-      max-width: 600px;
-      transition: background-color 0.3s ease;
-    }
-    
-    .instructions h3 {
-      margin-top: 0;
-      color: var(--card-title-color);
-      transition: color 0.3s ease;
-    }
-    
-    .instructions code {
-      background-color: var(--code-bg-color);
-      padding: 2px 5px;
-      border-radius: 3px;
-      font-family: monospace;
-      transition: background-color 0.3s ease;
+    .footer-content span {
+      margin: 0 10px;
     }
     
     .theme-toggle {
@@ -252,22 +238,12 @@
       <div class="tree" id="tree"></div>
       <div class="tooltip" id="tooltip"></div>
     </div>
-    
-    <div class="peer-info">
-      <h3>Your Peer Information</h3>
-      <p>Key: <span id="peerKey"></span></p>
-    </div>
-    
-    <div class="instructions">
-      <h3>How to Run Multiple Peers</h3>
-      <p>To run multiple instances of this application and see peers connect:</p>
-      <ol>
-        <li>Open a terminal and navigate to the peartree directory</li>
-        <li>Run <code>npx pear run .</code> to start the first instance</li>
-        <li>Open another terminal and run <code>npx pear run .</code> again to start another instance</li>
-        <li>Each new instance will connect to the network and appear as a pear on the tree</li>
-        <li>Hover over any pear to see information about that peer</li>
-      </ol>
+  </div>
+  
+  <div class="footer">
+    <div class="footer-content">
+      <span>Your Peer Key: <span id="peerKey"></span></span>
+      <span>Connected Peers: <span id="footerPeerCount">0</span></span>
     </div>
   </div>
 </body>
