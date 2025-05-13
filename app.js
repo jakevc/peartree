@@ -1,6 +1,12 @@
 /** @typedef {import('pear-interface')} */ /* global Pear */
 
-const { versions, config, swarm } = Pear
+let Hyperswarm, crypto, b4a;
+
+async function loadModules() {
+  Hyperswarm = globalThis.Hyperswarm || (await import('hyperswarm')).default
+  crypto = globalThis.hypercore_crypto || (await import('hypercore-crypto')).default
+  b4a = globalThis.b4a || (await import('b4a')).default
+}
 
 const PEAR_POSITIONS = [
   { x: 30, y: 30 },
@@ -27,7 +33,8 @@ const PEAR_POSITIONS = [
 
 const peers = new Map()
 let localPeer = null
-let swarmNode = null
+let hyperswarm = null
+const connections = []
 
 const treeElement = document.getElementById('tree')
 const tooltipElement = document.getElementById('tooltip')
@@ -36,59 +43,78 @@ const peerKeyElement = document.getElementById('peerKey')
 
 async function initSwarm() {
   try {
-    const topic = Buffer.from('peartree-app-fixed-topic-v1')
+    console.log('Initializing Hyperswarm for peartree application')
     
-    console.log('Initializing swarm with topic:', topic.toString('hex'))
+    hyperswarm = new Hyperswarm()
     
-    swarmNode = swarm.join(topic, {
-      valueEncoding: 'json',
-      lookup: true,
-      announce: true,
-      multiplex: true
-    })
+    Pear.teardown(() => hyperswarm.destroy())
+    
+    const topic = crypto.randomBytes(32)
+    const topicHex = b4a.toString(topic, 'hex')
+    
+    const fixedTopic = crypto.data(Buffer.from('peartree-app-v1'))
+    
+    console.log('Joining topic:', b4a.toString(fixedTopic, 'hex'))
+    
+    hyperswarm.join(fixedTopic, { server: true, client: true })
     
     localPeer = {
-      id: swarmNode.key.toString('hex'),
+      id: b4a.toString(hyperswarm.keyPair.publicKey, 'hex'),
       joinTime: new Date().toISOString(),
       userAgent: navigator.userAgent
     }
     
     peerKeyElement.textContent = localPeer.id.substring(0, 12) + '...'
     
-    swarmNode.on('connection', (connection, info) => {
-      console.log('New connection:', info)
-    })
-    
-    swarmNode.on('peer-add', (peer) => {
-      const peerId = peer.key.toString('hex')
-      console.log('Peer added:', peerId)
+    hyperswarm.on('connection', (conn, info) => {
+      const remotePublicKey = b4a.toString(info.publicKey, 'hex')
+      console.log('New connection from:', remotePublicKey)
       
-      if (peerId === localPeer.id || peers.has(peerId)) {
-        console.log('Skipping peer (self or already known):', peerId)
+      if (remotePublicKey === localPeer.id || peers.has(remotePublicKey)) {
+        console.log('Skipping connection (self or already known):', remotePublicKey)
         return
       }
       
       const peerInfo = {
-        id: peerId,
+        id: remotePublicKey,
         joinTime: new Date().toISOString(),
-        address: peer.address ? peer.address.host + ':' + peer.address.port : 'unknown'
+        address: 'p2p-connection',
+        publicKey: info.publicKey
       }
       
-      console.log('Adding peer to list:', peerInfo)
-      peers.set(peerId, peerInfo)
+      console.log('Adding peer to list:', peerInfo.id)
+      peers.set(remotePublicKey, peerInfo)
+      connections.push(conn)
       
       updatePeers()
-    })
-    
-    swarmNode.on('peer-remove', (peer) => {
-      const peerId = peer.key.toString('hex')
-      console.log('Peer removed:', peerId)
       
-      if (peers.has(peerId)) {
-        peers.delete(peerId)
+      conn.on('data', data => {
+        console.log('Received data from peer:', remotePublicKey, data.toString())
+      })
+      
+      conn.on('close', () => {
+        console.log('Connection closed:', remotePublicKey)
         
-        updatePeers()
-      }
+        if (peers.has(remotePublicKey)) {
+          peers.delete(remotePublicKey)
+          
+          updatePeers()
+        }
+        
+        const index = connections.indexOf(conn)
+        if (index > -1) {
+          connections.splice(index, 1)
+        }
+      })
+      
+      const myInfo = JSON.stringify({
+        type: 'peer-info',
+        id: localPeer.id,
+        joinTime: localPeer.joinTime,
+        userAgent: localPeer.userAgent
+      })
+      
+      conn.write(myInfo)
     })
     
     setTimeout(() => {
@@ -108,20 +134,12 @@ async function initSwarm() {
     setInterval(() => {
       console.log('Current peer count:', peers.size)
       console.log('Peers:', Array.from(peers.keys()))
-      
-      try {
-        swarmNode.update()
-        console.log('Forced swarm update')
-      } catch (e) {
-        console.error('Error updating swarm:', e)
-      }
     }, 5000)
     
-    console.log('Joined swarm with topic:', topic.toString('hex'))
-    console.log('Local peer ID:', localPeer.id)
+    console.log('Hyperswarm initialized with public key:', localPeer.id)
     
   } catch (error) {
-    console.error('Failed to initialize swarm:', error)
+    console.error('Failed to initialize Hyperswarm:', error)
   }
 }
 
@@ -185,8 +203,10 @@ function hideTooltip() {
   tooltipElement.style.opacity = '0'
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
   console.log('Peartree application starting...')
+  
+  await loadModules()
   
   initSwarm()
 })

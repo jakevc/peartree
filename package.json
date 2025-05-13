@@ -19,5 +19,12 @@
   "devDependencies": {
     "brittle": "^3.0.0",
     "pear-interface": "^1.0.0"
+  },
+  "dependencies": {
+    "b4a": "^1.6.7",
+    "bare-process": "^4.2.1",
+    "hypercore-crypto": "^3.6.0",
+    "hyperdht": "^6.20.5",
+    "hyperswarm": "^4.11.7"
   }
 }
