@@ -156,8 +156,14 @@ function updatePeers() {
   peerCountElement.textContent = peers.size
   footerPeerCountElement.textContent = peers.size
   
+  const usedPositions = new Map()
+  
+  const peerIds = Array.from(peers.keys())
+  const shuffledPeerIds = peerIds.sort(() => Math.random() - 0.5)
+  
   let index = 0
-  for (const [peerId, peerInfo] of peers.entries()) {
+  for (const peerId of shuffledPeerIds) {
+    const peerInfo = peers.get(peerId)
     const pearElement = document.createElement('div')
     pearElement.className = 'pear'
     
@@ -165,9 +171,18 @@ function updatePeers() {
       pearElement.classList.add('self-peer')
     }
     
-    const position = PEAR_POSITIONS[index % PEAR_POSITIONS.length]
-    pearElement.style.left = `${position.x}%`
-    pearElement.style.top = `${position.y}%`
+    const basePosition = PEAR_POSITIONS[index % PEAR_POSITIONS.length]
+    
+    const xOffset = (Math.random() * 2 - 1) * 2 // -2% to +2% offset
+    const yOffset = (Math.random() * 2 - 1) * 1.5 // -1.5% to +1.5% offset
+    
+    const x = basePosition.x + xOffset
+    const y = basePosition.y + yOffset
+    
+    pearElement.style.left = `${x}%`
+    pearElement.style.top = `${y}%`
+    
+    usedPositions.set(index, { x, y })
     
     pearElement.dataset.peerId = peerId
     
